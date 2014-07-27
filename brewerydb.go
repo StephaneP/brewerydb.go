@@ -28,13 +28,21 @@ type (
 	}
 
 	Beer struct {
-		Id    string `json:"id"`
-		Name  string `json:"name"`
-		Style Style  `json:"style"`
+		Id     string `json:"id"`
+		Name   string `json:"name"`
+		Style  Style  `json:"style"`
+		Images Images
 	}
 
 	Breweries []Brewery
-	Brewery   struct{}
+	Brewery   struct {
+		Id          string `json:"id"`
+		Name        string `json:"name"`
+		Description string `json:"description"`
+		Established int    `json:"established"`
+		IsOrganic   bool   `json:"isOrganice"`
+		Images      Images
+	}
 
 	Category struct {
 		Id         int    `json:"id"`
@@ -54,6 +62,12 @@ type (
 		IbuMax string `json:"ibuMax"`
 		SrmMin string `json:"srmMin"`
 		IbuMin string `json:"ibuMin"`
+	}
+
+	Images struct {
+		Icon   string `json:"icon"`
+		Medium string `json:"medium"`
+		Large  string `json:"large"`
 	}
 )
 
